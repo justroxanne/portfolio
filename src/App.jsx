@@ -10,8 +10,8 @@ function App() {
     <div>
       <Header />
       <Hello />
-      <About />
       <Work />
+      <About />
       <Contact />
     </div>
   );
