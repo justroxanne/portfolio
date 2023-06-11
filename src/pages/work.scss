@@ -1,0 +1,70 @@
+@import '../variables.scss';
+
+.work {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2dvw;
+    font-size: 1.2em;
+  }
+
+  .projects h2 {
+    font-weight: 500;
+  }
+
+  .projects li a:hover {
+    h2 {
+      font-style: italic;
+    }
+
+    .arrow {
+      color: black;
+      transform: translateX(1em);
+      transition: transform 0.25s ease-in;
+    }
+  }
+
+  .projects li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+  }
+
+  a {
+    p {
+      font-weight: 200;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid $main-color;
+    color: $main-color;
+    overflow: hidden;
+    text-align: center;
+    height: 3px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .work {
+    .projects {
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+    .projects li a {
+      flex-direction: column;
+      font-size: 0.8em;
+    }
+  }
+}

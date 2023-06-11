@@ -1,16 +1,32 @@
-import './App.css';
-import Header from './components/Header';
-import Hello from './components/Hello';
-import About from './components/About';
-import Work from './components/Work';
-import Contact from './components/Contact';
+import './app.scss';
+import Hello from './pages/Hello';
+import About from './pages/About';
+import Work from './pages/Work';
+import Contact from './pages/Contact';
+import Follower from './components/Follower';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      const { clientX, clientY } = event;
+      setMousePosition({ x: clientX, y: clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div>
-      <Header />
+      <Follower mousePosition={mousePosition} />
       <Hello />
-      <Work />
+      <Work mousePosition={mousePosition} />
       <About />
       <Contact />
     </div>

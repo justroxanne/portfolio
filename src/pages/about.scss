@@ -1,0 +1,89 @@
+@import '../variables.scss';
+
+.about {
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  // background-image: url(../assets/portrait-roxanne.jpeg);
+  // background-size: 40%;
+  // background-repeat: no-repeat;
+  // background-position: bottom right;
+
+  .portrait {
+    z-index: -1;
+    width: 40%;
+    position: absolute;
+    right: 0;
+  }
+
+  .intro {
+    width: 70dvw;
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  .parkour {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 3dvw;
+    gap: 2dvh;
+  }
+
+  .resume-pdf {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border: 1px solid $main-color;
+    padding: 0 1em 0 0.5em;
+    margin-left: 3dvw;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  a:hover {
+    span {
+      font-style: italic;
+    }
+    .arrow {
+      color: black;
+      transform: translateX(1em);
+      transition: transform 0.25s ease-in;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 0;
+
+    .portrait {
+      width: 60%;
+      position: relative;
+      align-self: flex-end;
+    }
+    .intro {
+      padding-left: 0.5em;
+      width: 100%;
+      font-size: 1.2em;
+    }
+
+    .parkour {
+      font-size: 0.8em;
+    }
+
+    .resume-pdf {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

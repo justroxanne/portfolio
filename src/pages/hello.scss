@@ -1,0 +1,31 @@
+.hello {
+  padding: 0.5em;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hello h1 {
+  margin: 0.5em;
+  font-size: 11dvw;
+  line-height: 11dvw;
+}
+
+.hello p {
+  align-self: flex-end;
+  font-size: 2em;
+  margin-right: 10dvw;
+}
+
+@media (max-width: 600px) {
+  .hello {
+    p {
+      width: 50vw;
+    }
+    h1 {
+      font-size: 12dvw;
+    }
+  }
+}
