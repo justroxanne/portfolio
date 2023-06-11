@@ -39,6 +39,7 @@ const Contact = () => {
       <a
         href='mailto:hello@roxannelucas.fr'
         target='_blank'
+        rel='noopener'
         className='signature'
       >
         <FiArrowUpRight className='before' />
@@ -47,10 +48,14 @@ const Contact = () => {
       </a>
       <ul className='links'>
         <li>
-          <a href='https://www.linkedin.com/in/roxannelucas/'>LINKEDIN</a>
+          <a href='https://www.linkedin.com/in/roxannelucas/' target='_blank'>
+            LINKEDIN
+          </a>
         </li>
         <li>
-          <a href='https://github.com/justroxanne'>GITHUB</a>
+          <a href='https://github.com/justroxanne' target='_blank'>
+            GITHUB
+          </a>
         </li>
       </ul>
     </div>
