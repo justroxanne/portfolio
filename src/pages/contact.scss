@@ -1,0 +1,103 @@
+@import '../variables.scss';
+
+.contact {
+  width: 100dvw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 10dvh;
+
+  h1 {
+    width: 60%;
+    align-self: flex-start;
+    font-size: 6dvw;
+    padding: 2dvw;
+  }
+
+  .links a:after {
+    content: '';
+    position: absolute;
+    transform: scaleX(0);
+    width: 100%;
+    height: 2px;
+    bottom: 1.3px;
+    left: 0;
+    background-color: $main-color;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in;
+  }
+
+  .links a.active {
+    text-decoration: underline 2px $main-color;
+  }
+
+  .links a:hover:after,
+  .links a:active:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.links {
+  padding-bottom: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.active:hover:after {
+  transform: scaleX(0);
+}
+
+.signature {
+  font-size: 2em;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+  transform: translate(25dvw, -25dvh);
+}
+
+.before {
+  transform: scale(1, 1);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-in;
+}
+
+.after {
+  transform: scale(0, 0);
+  transform-origin: top right;
+  transition: transform 0.25s ease-in;
+}
+
+.signature:hover {
+  .before {
+    transform: scale(0, 0);
+    transform-origin: top right;
+    transition: transform 0.25s ease-in;
+  }
+
+  .after {
+    transform: scale(1, 1);
+    transition: transform 0.25s ease-in;
+    transform-origin: bottom left;
+    transition-delay: 0.25s;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    h1 {
+      width: 90%;
+      font-size: 4em;
+    }
+    .signature {
+      transform: translate(0, -20dvh);
+      font-size: 1.5em;
+    }
+  }
+}
