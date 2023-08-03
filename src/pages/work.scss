@@ -18,7 +18,11 @@
     font-weight: 500;
   }
 
-  .projects li a:hover {
+  .project-detail {
+    width: 100%;
+  }
+
+  .project-detail a:hover {
     h2 {
       font-style: italic;
     }
@@ -30,7 +34,7 @@
     }
   }
 
-  .projects li a {
+  .project-detail a {
     display: flex;
     justify-content: space-between;
     align-items: center;

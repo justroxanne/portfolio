@@ -55,7 +55,7 @@ const Work = ({ mousePosition }) => {
       <div className='project-img'></div>
       <ul className='projects'>
         {projects.map((project, index) => (
-          <li key={index}>
+          <li key={index} className='project-detail'>
             <a
               href={project.link}
               target='_blank'

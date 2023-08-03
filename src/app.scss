@@ -16,7 +16,7 @@ body {
   width: 100dvw;
   background-color: $background-color;
   color: $main-color;
-  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 .root {
