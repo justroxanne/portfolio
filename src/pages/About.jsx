@@ -18,11 +18,6 @@ const About = () => {
       <img src={portrait} className='portrait' />
       <div className='parkour'>
         <p>
-          • From Aug 2023 • Frontend Web Developpment
-          <br />
-          <i>Looking for an apprenticeship</i>
-        </p>
-        <p>
           • Feb to Aug 2023 • Web and web mobile developper
           <br />
           <i>Bootcamp training Wild Code School Biarritz </i>
