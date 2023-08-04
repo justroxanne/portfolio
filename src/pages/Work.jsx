@@ -32,13 +32,9 @@ const Work = ({ mousePosition }) => {
   ];
 
   useEffect(() => {
-    const handleWindowResize = () => {
-      if (window.innerWidth < 900) {
-        setIsModalOpen(false);
-      }
-    };
-    window.addEventListener('resize', handleWindowResize);
-    return () => window.removeEventListener('resize', handleWindowResize);
+    if (window.innerWidth < 900) {
+      setIsModalOpen(false);
+    }
   }, []);
 
   const openModal = (imageSrc) => {
@@ -81,47 +77,6 @@ const Work = ({ mousePosition }) => {
             <hr></hr>
           </li>
         ))}
-        {/* <li>
-          <a
-            href='http://wookie-clicker.roxannelucas.fr'
-            target='_blank'
-            onMouseOver={() => {
-              openModal(Wookie);
-            }}
-            onMouseLeave={closeModal}
-          >
-            <h2>Wookie Clicker</h2>
-            <span>Personnal Project • React</span>
-            <FiArrowRight
-              style={{ height: '2em', width: '2em' }}
-              className='arrow'
-            />
-            {isModalOpen && (
-              <Modal imageSrc={currentImageSrc} mousePosition={mousePosition} />
-            )}
-          </a>
-        </li>
-        <hr></hr>
-        <li>
-          <a
-            href='http://tripplanner-mocha.vercel.app'
-            target='_blank'
-            onMouseOver={() => {
-              openModal(tripPlanner);
-            }}
-            onMouseLeave={closeModal}
-          >
-            <h2>TripPlanner</h2>
-            <span>Hackathon: 24 hours / team of 2 • React / Node.js</span>
-            <FiArrowRight
-              style={{ height: '2em', width: '2em' }}
-              className='arrow'
-            />
-            {isModalOpen && (
-              <Modal imageSrc={currentImageSrc} mousePosition={mousePosition} />
-            )}
-          </a>
-        </li> */}
       </ul>
     </div>
   );
