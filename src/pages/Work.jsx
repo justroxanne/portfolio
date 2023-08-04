@@ -31,12 +31,6 @@ const Work = ({ mousePosition }) => {
     },
   ];
 
-  useEffect(() => {
-    if (window.innerWidth < 900) {
-      setIsModalOpen(false);
-    }
-  }, []);
-
   const openModal = (imageSrc) => {
     setIsModalOpen(true);
     setCurrentImageSrc(imageSrc);
@@ -67,7 +61,7 @@ const Work = ({ mousePosition }) => {
                 style={{ height: '2em', width: '2em' }}
                 className='arrow'
               />
-              {isModalOpen && (
+              {window.innerWidth > 900 && isModalOpen && (
                 <Modal
                   imageSrc={currentImageSrc}
                   mousePosition={mousePosition}
