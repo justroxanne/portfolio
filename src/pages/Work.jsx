@@ -57,6 +57,7 @@ const Work = ({ mousePosition }) => {
         {projects.map((project, index) => (
           <li key={index} className='project-detail'>
             <a
+              className='project-container'
               href={project.link}
               target='_blank'
               onMouseOver={() => {
@@ -64,8 +65,8 @@ const Work = ({ mousePosition }) => {
               }}
               onMouseLeave={closeModal}
             >
-              <h2>{project.title}</h2>
-              <span>{project.description}</span>
+              <h2 className='project-title'>{project.title}</h2>
+              <span className='project-description'>{project.description}</span>
               <FiArrowRight
                 style={{ height: '2em', width: '2em' }}
                 className='arrow'

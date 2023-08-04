@@ -14,16 +14,17 @@
     font-size: 1.2em;
   }
 
-  .projects h2 {
+  .project-title {
     font-weight: 500;
   }
 
   .project-detail {
     width: 100%;
+    height: fit-content;
   }
 
   .project-detail a:hover {
-    h2 {
+    .project-title {
       font-style: italic;
     }
 
@@ -34,17 +35,11 @@
     }
   }
 
-  .project-detail a {
+  .project-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 5em;
-  }
-
-  a {
-    p {
-      font-weight: 200;
-    }
   }
 
   hr {
@@ -58,7 +53,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .work {
     .projects {
       height: 100vh;
@@ -66,9 +61,11 @@
       align-items: center;
       gap: 1em;
     }
-    .projects li a {
-      flex-direction: column;
-      font-size: 0.8em;
+
+    .project-description {
+      position: absolute;
+      bottom: 0.2em;
+      font-size: 0.7em;
     }
   }
 }
