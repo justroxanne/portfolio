@@ -1,10 +1,9 @@
-import React from 'react';
-import './hello.scss';
-import Navbar from '../components/Navbar';
+import React from "react";
+import Navbar from "../components/Navbar";
 
 const Hello = () => {
   return (
-    <div className='hello' id='hello'>
+    <div className="hello" id="hello">
       <Navbar />
       <p>
         Hello! <br />

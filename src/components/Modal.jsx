@@ -1,39 +1,38 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import './modal.scss';
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 const Modal = ({ imageSrc, mousePosition }) => {
-  const appear = (elem) => {
-    gsap.fromTo(
-      elem,
-      {
-        autoAlpha: 0,
-        scale: 0.001,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
-        duration: 1,
-      }
-    );
-  };
+  // const appear = (elem) => {
+  //   gsap.fromTo(
+  //     elem,
+  //     {
+  //       autoAlpha: 0,
+  //       clipPath: "circle(0% at 50% 50%)",
+  //     },
+  //     {
+  //       autoAlpha: 1,
+  //       clipPath: "circle(100% at 50% 50%)",
+  //       duration: 1,
+  //     }
+  //   );
+  // };
 
-  useEffect(() => {
-    appear('.modal-img');
-  }, [imageSrc]);
+  // useEffect(() => {
+  //   appear(".modal-img");
+  // }, [imageSrc]);
 
   return (
     <div
-      className='modal'
+      className="modal"
       style={{
-        zIndex: '-5',
-        position: 'fixed',
+        zIndex: "-5",
+        position: "fixed",
         top: mousePosition.y,
         left: mousePosition.x,
-        transform: 'translate(-50%, -50%)',
+        transform: "translate(-50%, -150%)",
       }}
     >
-      <img className='modal-img' src={imageSrc} alt='Modal' />
+      <img className="modal-img" src={imageSrc} alt="Modal" />
     </div>
   );
 };

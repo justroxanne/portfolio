@@ -1,10 +1,10 @@
-import './app.scss';
-import Hello from './pages/Hello';
-import About from './pages/About';
-import Work from './pages/Work';
-import Contact from './pages/Contact';
-import Follower from './components/Follower';
-import { useEffect, useState } from 'react';
+import "./styles/index.scss";
+import Hello from "./pages/Hello";
+import About from "./pages/About";
+import Work from "./pages/Work";
+import Contact from "./pages/Contact";
+import Follower from "./components/Follower";
+import { useEffect, useState } from "react";
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -15,10 +15,10 @@ function App() {
       setMousePosition({ x: clientX, y: clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 

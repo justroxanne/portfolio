@@ -1,74 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import { FiArrowRight } from 'react-icons/fi';
-import Modal from '../components/Modal';
-import Wookie from '../assets/Wookie-clicker.png';
-import tripPlanner from '../assets/tripPlanner.png';
-import PopPursuit from '../assets/pop-pursuit.png';
-import './work.scss';
+import React, { useState, useContext } from "react";
+import { GalleryContext } from "../contexts/WorkGallery";
+import { FiArrowRight } from "react-icons/fi";
+import Wookie from "../assets/Wookie-clicker.png";
+import tripPlanner from "../assets/tripPlanner.png";
+import PopPursuit from "../assets/pop-pursuit.png";
 
 const Work = ({ mousePosition }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageSrc, setCurrentImageSrc] = useState('');
+
+  const { setCurrentImageSrc } = useContext(GalleryContext);
 
   const projects = [
     {
-      title: 'Wookie Clicker',
-      description: 'Personnal Project • React',
+      title: "Wookie Clicker",
+      description: "Personnal Project • React",
       imageSrc: Wookie,
-      link: 'http://wookie-clicker.roxannelucas.fr',
+      link: "http://wookie-clicker.roxannelucas.fr",
     },
     {
-      title: 'TripPlanner',
-      description: 'Hackathon: 24 hours / team of 2 • React / Node.js',
+      title: "TripPlanner",
+      description: "Hackathon: 24 hours / team of 2 • React / Node.js",
       imageSrc: tripPlanner,
-      link: 'http://tripplanner-mocha.vercel.app',
+      link: "http://tripplanner-mocha.vercel.app",
     },
     {
-      title: 'Pop Pursuit',
-      description: 'Personnal Project • React / Node.js / Express / MySQL',
+      title: "Pop Pursuit",
+      description: "Personnal Project • React / Node.js / Express / MySQL",
       imageSrc: PopPursuit,
-      link: 'https://pop-pursuit.roxannelucas.fr',
+      link: "https://pop-pursuit.roxannelucas.fr",
     },
   ];
 
-  const openModal = (imageSrc) => {
-    setIsModalOpen(true);
-    setCurrentImageSrc(imageSrc);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className='work' id='work'>
-      <div className='project-img'></div>
-      <ul className='projects'>
+    <div className="work" id="work">
+      <div className="project-img"></div>
+      <ul className="projects">
         {projects.map((project, index) => (
-          <li key={index} className='project-detail'>
+          <li key={index} className="project-detail">
             <a
-              className='project-container'
+              className="project-container"
               href={project.link}
-              target='_blank'
+              target="_blank"
               onMouseOver={() => {
-                openModal(project.imageSrc);
+                setCurrentImageSrc(project.imageSrc);
               }}
-              onMouseLeave={closeModal}
+              onMouseLeave={() => {
+                setCurrentImageSrc("");
+              }}
             >
-              <h2 className='project-title'>{project.title}</h2>
-              <span className='project-description'>{project.description}</span>
+              <h2 className="project-title">{project.title}</h2>
+              <span className="project-description">{project.description}</span>
               <FiArrowRight
-                style={{ height: '2em', width: '2em' }}
-                className='arrow'
+                style={{ height: "2em", width: "2em" }}
+                className="arrow"
               />
-              {window.innerWidth > 900 && isModalOpen && (
-                <Modal
-                  imageSrc={currentImageSrc}
-                  mousePosition={mousePosition}
-                />
-              )}
             </a>
-            <hr></hr>
           </li>
         ))}
       </ul>

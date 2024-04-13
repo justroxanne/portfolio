@@ -1,13 +1,15 @@
-import React from 'react';
-import { FiArrowRight } from 'react-icons/fi';
-import portrait from '../assets/portrait-roxanne.jpeg';
-import cvfile from '../assets/RoxanneLucasCV2023.pdf';
-import './about.scss';
+import React, { useContext } from "react";
+import { FollowerContext } from "../contexts/FollowerData.jsx";
+import { FiArrowRight } from "react-icons/fi";
+import portrait from "../assets/portrait-roxanne.jpeg";
+import cvfile from "../assets/RoxanneLucasCV2023.pdf";
 
 const About = () => {
+  const { setFollowerData } = useContext(FollowerContext);
+
   return (
-    <div className='about' id='about'>
-      <p className='intro'>
+    <div className="about" id="about">
+      <p className="intro">
         <i>
           "The skills acquired during my career as a tattoo artist enable me to
           understand the challenges faced by marketing and creative teams. It is
@@ -15,8 +17,8 @@ const About = () => {
           the fascinating world of coding."
         </i>
       </p>
-      <img src={portrait} className='portrait' />
-      <div className='parkour'>
+      <img src={portrait} className="portrait" />
+      <div className="parkour">
         <p>
           • Feb to Aug 2023 • Web and web mobile developper
           <br />
@@ -28,11 +30,27 @@ const About = () => {
           <i>L'antichambre tattoo studio and art gallery Anglet</i>
         </p>
       </div>
-      <a href={cvfile} target='_blank' className='resume-pdf'>
+      <a
+        href={cvfile}
+        target="_blank"
+        className="resume-pdf"
+        onMouseOver={() =>
+          setFollowerData({
+            data: "hover",
+            text: "Click me !",
+          })
+        }
+        onMouseLeave={() =>
+          setFollowerData({
+            data: "",
+            text: "",
+          })
+        }
+      >
         <span>Explore my resume</span>
         <FiArrowRight
-          style={{ height: '1.5em', width: '1.5em' }}
-          className='arrow'
+          style={{ height: "1.5em", width: "1.5em" }}
+          className="arrow"
         />
       </a>
     </div>

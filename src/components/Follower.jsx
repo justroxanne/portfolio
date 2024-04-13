@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import './follower.scss';
+import React, { useContext } from "react";
+import { GalleryContext } from "../contexts/WorkGallery.jsx";
+import { FollowerContext } from "../contexts/FollowerData.jsx";
 
 const Follower = ({ mousePosition }) => {
+  const { currentImageSrc } = useContext(GalleryContext);
+  const { followerData } = useContext(FollowerContext);
+
   return (
     <div
-      id='follower'
+      id="follower"
+      className="cursor-follower"
+      data-background={currentImageSrc !== ""}
+      data-hover={followerData.data === "hover"}
       style={{
-        position: 'fixed',
-        top: mousePosition.y,
-        left: mousePosition.x,
-        transform: 'translate(-50%, -50%)',
+        backgroundImage: `url(${currentImageSrc})`,
+        transform: `translate(calc(${mousePosition.x}px - 50%), calc(${mousePosition.y}px - 50%))`,
       }}
-    ></div>
+    >
+      {followerData.text}
+    </div>
   );
 };
 
