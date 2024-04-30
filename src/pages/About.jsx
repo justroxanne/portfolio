@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { FollowerContext } from "../contexts/FollowerData.jsx";
+import { CursorContext } from "../contexts/CursorData.jsx";
 import { FiArrowRight } from "react-icons/fi";
 import portrait from "../assets/portrait-roxanne.jpeg";
 import cvfile from "../assets/RoxanneLucasCV2023.pdf";
 
 const About = () => {
-  const { setFollowerData } = useContext(FollowerContext);
+  const { setCursorData } = useContext(CursorContext);
 
   return (
     <div className="about" id="about">
@@ -35,13 +35,13 @@ const About = () => {
         target="_blank"
         className="resume-pdf"
         onMouseOver={() =>
-          setFollowerData({
+          setCursorData({
             data: "hover",
             text: "Click me !",
           })
         }
         onMouseLeave={() =>
-          setFollowerData({
+          setCursorData({
             data: "",
             text: "",
           })

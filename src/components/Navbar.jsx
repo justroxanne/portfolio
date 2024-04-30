@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-scroll";
+import ColorTheme from "./ColorTheme";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <ul>
+      <ul className="main-navigation">
         <li>
           <Link to="hello" spy={true} smooth={true} duration={600}>
             01/HELLO
@@ -25,6 +26,7 @@ const Navbar = () => {
             04/CONTACT
           </Link>
         </li>
+        <ColorTheme />
       </ul>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { FollowerContext } from "../contexts/FollowerData.jsx";
+import { CursorContext } from "../contexts/CursorData.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -7,7 +7,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Contact = () => {
-  const { setFollowerData } = useContext(FollowerContext);
+  const { setCursorData } = useContext(CursorContext);
 
   const moveUp = (elem) => {
     gsap.fromTo(
@@ -44,13 +44,13 @@ const Contact = () => {
         rel="noopener"
         className="signature"
         onMouseOver={() =>
-          setFollowerData({
+          setCursorData({
             data: "hover",
             text: "contact me!",
           })
         }
         onMouseLeave={() =>
-          setFollowerData({
+          setCursorData({
             data: "",
             text: "",
           })

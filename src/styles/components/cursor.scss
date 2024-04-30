@@ -1,0 +1,67 @@
+#cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  color: white;
+  position: fixed;
+  border: 1px solid $mouse-color;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 250px;
+  pointer-events: none;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  transition: width 0.75s ease-out, height 0.75s ease-out,
+    border-radius 0.75s ease-out, font-size 0.75s ease-out 0.15s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:where([data-background="true"]) {
+    width: 20vw;
+    height: 15vw;
+    border-radius: 0;
+    border: none;
+    mix-blend-mode: normal;
+
+    & ~ .cursor-follower {
+      display: none;
+    }
+  }
+
+  &:where([data-hover="true"]) {
+    padding: 1rem;
+    width: 135px;
+    height: 135px;
+    background: $mouse-color;
+    font-size: 1em;
+    mix-blend-mode: normal;
+  }
+}
+
+.cursor-follower {
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  border-radius: 250px;
+  background: $mouse-color;
+  transition: transform 0.5s ease-out;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: black;
+}
+
+@media (max-width: 600px) {
+  #cursor {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+@import "./base/colors.scss";
+
+$themes: (
+  "light": (
+    background-color: $light-bg,
+    text-color: $light-text,
+  ),
+  "pink": (
+    background-color: $pink-bg,
+    text-color: $pink-text,
+  ),
+  "blue": (
+    background-color: $blue-bg,
+    text-color: $blue-text,
+  ),
+  "dark": (
+    background-color: $dark-bg,
+    text-color: $dark-text,
+  ),
+);
+
+$mouse-color: black;
+$main-font: "Space Grotesk";
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

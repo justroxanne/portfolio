@@ -1,10 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 
 const Hello = () => {
   return (
     <div className="hello" id="hello">
-      <Navbar />
       <p>
         Hello! <br />
         I'm a Web Developper <br />

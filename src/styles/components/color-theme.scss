@@ -1,0 +1,27 @@
+.colors {
+  display: flex;
+  gap: 1rem;
+
+  & li {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid black;
+    border-radius: 50px;
+  }
+
+  & .white {
+    background-color: $light-bg;
+  }
+
+  & .pink {
+    background-color: $pink-bg;
+  }
+
+  & .blue {
+    background-color: $blue-bg;
+  }
+
+  & .black {
+    background-color: $dark-bg;
+  }
+}

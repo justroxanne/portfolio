@@ -1,5 +1,3 @@
-@import "../variables.scss";
-
 .work {
   width: 100%;
   height: 100vh;
@@ -21,7 +19,7 @@
   .project-detail {
     width: 100%;
     height: fit-content;
-    box-shadow: inset 0 -2px 0 $main-color;
+    box-shadow: inset 0 -2px 0 currentColor;
   }
 
   .arrow {

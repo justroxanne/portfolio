@@ -1,6 +1,7 @@
-@import "./variables.scss";
+@import "./theme.scss";
 
 @import "./base/app.scss";
+@import "./base/colors.scss";
 
 @import "./pages/about.scss";
 @import "./pages/work.scss";
@@ -8,4 +9,5 @@
 @import "./pages/hello.scss";
 
 @import "./components/navbar.scss";
-@import "./components/follower.scss";
+@import "./components/cursor.scss";
+@import "./components/color-theme.scss";
