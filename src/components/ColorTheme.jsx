@@ -15,39 +15,7 @@ const ColorTheme = () => {
         }}
         onMouseOver={() => {
           setCursorData({
-            data: "color",
-          });
-        }}
-        onMouseLeave={() => {
-          setCursorData({
-            data: "",
-          });
-        }}
-      ></li>
-      <li
-        className="blue"
-        onClick={() => {
-          setColorTheme("blue");
-        }}
-        onMouseOver={() => {
-          setCursorData({
-            data: "color",
-          });
-        }}
-        onMouseLeave={() => {
-          setCursorData({
-            data: "",
-          });
-        }}
-      ></li>
-      <li
-        className="pink"
-        onClick={() => {
-          setColorTheme("pink");
-        }}
-        onMouseOver={() => {
-          setCursorData({
-            data: "color",
+            data: "hover",
           });
         }}
         onMouseLeave={() => {
@@ -63,7 +31,7 @@ const ColorTheme = () => {
         }}
         onMouseOver={() => {
           setCursorData({
-            data: "color",
+            data: "hover",
           });
         }}
         onMouseLeave={() => {

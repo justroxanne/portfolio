@@ -1,8 +1,10 @@
 import React from "react";
+import Scene from "../components/scene";
 
 const Hello = () => {
   return (
     <div className="hello" id="hello">
+      <Scene />
       <p>
         Hello! <br />
         I'm a Web Developper <br />

@@ -5,23 +5,19 @@
   & li {
     width: 1rem;
     height: 1rem;
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 50px;
   }
 
   & .white {
     background-color: $light-bg;
-  }
-
-  & .pink {
-    background-color: $pink-bg;
-  }
-
-  & .blue {
-    background-color: $blue-bg;
+    border-color: $light-text;
+    color: $light-text;
   }
 
   & .black {
     background-color: $dark-bg;
+    border-color: $dark-text;
+    color: $dark-text;
   }
 }

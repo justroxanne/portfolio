@@ -14,6 +14,12 @@ body {
   height: 100vh;
   width: 100%;
   overscroll-behavior-x: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  @media (resolution >= 1.5dppx) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 .root {
@@ -51,4 +57,29 @@ html {
 
 span {
   font-weight: 200;
+}
+
+@media screen and (min-width: 768px) {
+  .link:after {
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    width: 100%;
+    height: 2px;
+    bottom: 1.3px;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in;
+  }
+
+  .link.active {
+    text-decoration: underline 2px currentColor;
+  }
+
+  .link:hover:after,
+  .link:active:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }

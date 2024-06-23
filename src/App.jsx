@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
-import Navbar from "./components/Navbar";
+import Menu from "./components/Menu";
 import Hello from "./pages/Hello";
 import About from "./pages/About";
 import Work from "./pages/Work";
@@ -35,10 +35,10 @@ function App() {
 
   return (
     <main className={`theme--${colorTheme}`}>
-      <Navbar />
+      <Menu />
       <Cursor mousePosition={mousePosition} />
       <Hello />
-      <Work mousePosition={mousePosition} />
+      <Work />
       <About />
       <Contact />
     </main>

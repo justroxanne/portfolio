@@ -12,10 +12,10 @@ const Cursor = ({ mousePosition }) => {
         id="cursor"
         className="cursor"
         data-background={currentImageSrc !== ""}
-        data-color={cursorData.data === "color"}
+        data-text={cursorData.data === "text"}
         data-hover={cursorData.data === "hover"}
         style={{
-          backgroundImage: `url(${currentImageSrc})`,
+          backgroundImage: `url(${currentImageSrc || null})`,
           transform: `translate(calc(${mousePosition.x}px - 50%), calc(${mousePosition.y}px - 50%))`,
         }}
       >
