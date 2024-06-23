@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Scene from "../components/scene";
 
 const Hello = () => {
   return (
     <div className="hello" id="hello">
-      <Navbar />
+      <Scene />
       <p>
         Hello! <br />
         I'm a Web Developper <br />

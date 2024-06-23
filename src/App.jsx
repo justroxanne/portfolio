@@ -1,13 +1,24 @@
-import "./styles/index.scss";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
+import Menu from "./components/Menu";
 import Hello from "./pages/Hello";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
-import Follower from "./components/Follower";
-import { useEffect, useState } from "react";
+import Cursor from "./components/Cursor";
+import "./styles/index.scss";
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { colorTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.getElementById("root").classList.add(`theme--${colorTheme}`);
+
+    return () => {
+      document.getElementById("root").classList.remove(`theme--${colorTheme}`);
+    };
+  }, [colorTheme]);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -23,13 +34,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Follower mousePosition={mousePosition} />
+    <main className={`theme--${colorTheme}`}>
+      <Menu />
+      <Cursor mousePosition={mousePosition} />
       <Hello />
-      <Work mousePosition={mousePosition} />
+      <Work />
       <About />
       <Contact />
-    </div>
+    </main>
   );
 }
 

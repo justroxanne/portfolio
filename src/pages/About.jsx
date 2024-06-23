@@ -1,22 +1,29 @@
 import React, { useContext } from "react";
-import { FollowerContext } from "../contexts/FollowerData.jsx";
+import { CursorContext } from "../contexts/CursorData.jsx";
 import { FiArrowRight } from "react-icons/fi";
+import { motion } from "framer-motion";
 import portrait from "../assets/portrait-roxanne.jpeg";
 import cvfile from "../assets/RoxanneLucasCV2023.pdf";
 
 const About = () => {
-  const { setFollowerData } = useContext(FollowerContext);
+  const { setCursorData } = useContext(CursorContext);
 
   return (
     <div className="about" id="about">
-      <p className="intro">
+      <motion.p
+        className="intro"
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, margin: "-20%" }}
+      >
         <i>
-          "The skills acquired during my career as a tattoo artist enable me to
+          “The skills acquired during my career as a tattoo artist enable me to
           understand the challenges faced by marketing and creative teams. It is
           for the satisfaction of solving complex problems that I have turned to
-          the fascinating world of coding."
+          the fascinating world of coding.”
         </i>
-      </p>
+      </motion.p>
       <img src={portrait} className="portrait" />
       <div className="parkour">
         <p>
@@ -29,25 +36,36 @@ const About = () => {
           <br />
           <i>L'antichambre tattoo studio and art gallery Anglet</i>
         </p>
+        <p>
+          • Sept 2023 to now • Frontend Developper
+          <br />
+          <a
+            onMouseOver={() => setCursorData({ data: "hover" })}
+            onMouseLeave={() => setCursorData({ data: "" })}
+            href="https://ultro.fr/"
+          >
+            <i>Ultrō</i>
+          </a>
+        </p>
       </div>
       <a
         href={cvfile}
         target="_blank"
         className="resume-pdf"
         onMouseOver={() =>
-          setFollowerData({
-            data: "hover",
+          setCursorData({
+            data: "text",
             text: "Click me !",
           })
         }
         onMouseLeave={() =>
-          setFollowerData({
+          setCursorData({
             data: "",
             text: "",
           })
         }
       >
-        <span>Explore my resume</span>
+        <span>EXPLORE MY RESUME</span>
         <FiArrowRight
           style={{ height: "1.5em", width: "1.5em" }}
           className="arrow"

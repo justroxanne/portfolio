@@ -1,13 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { GalleryContext } from "../contexts/WorkGallery";
 import { FiArrowRight } from "react-icons/fi";
 import Wookie from "../assets/Wookie-clicker.png";
 import tripPlanner from "../assets/tripPlanner.png";
 import PopPursuit from "../assets/pop-pursuit.png";
 
-const Work = ({ mousePosition }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+const Work = () => {
   const { setCurrentImageSrc } = useContext(GalleryContext);
 
   const projects = [

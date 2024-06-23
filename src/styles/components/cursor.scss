@@ -1,0 +1,88 @@
+#cursor {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #cursor {
+    @include themed {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0;
+      text-transform: uppercase;
+      color: t("background-color");
+      position: fixed;
+      border: 1px solid t("text-color");
+      background-color: t("text-color");
+      width: 25px;
+      height: 25px;
+      border-radius: 250px;
+      pointer-events: none;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      transition: width 0.75s ease-out, height 0.75s ease-out,
+        border-radius 0.75s ease-out, font-size 0.75s ease-out 0.15s;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:where([data-background="true"]) {
+        width: 20vw;
+        height: 15vw;
+        border-radius: 0;
+        border: none;
+
+        & ~ .cursor-follower {
+          display: none;
+        }
+      }
+
+      &:where([data-text="true"]) {
+        padding: 1rem;
+        width: 135px;
+        height: 135px;
+        background: t("text-color");
+        font-size: 1em;
+      }
+
+      &:where([data-hover="true"]) {
+        color: t("text-color");
+        background: transparent;
+        border: none;
+        mix-blend-mode: difference;
+
+        & ~ .cursor-follower {
+          display: none;
+        }
+      }
+
+      &:where([data-hover="true"]):after {
+        content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 7V5H5v12h2V8.414l10.293 10.293 1.414-1.414L8.414 7H17z' fill='white'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .cursor-follower {
+    @include themed {
+      z-index: 2;
+      width: 10px;
+      height: 10px;
+      border-radius: 250px;
+      background: $mouse-color;
+      transition: transform 0.5s ease-out;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-color: t("text-color");
+    }
+  }
+}
