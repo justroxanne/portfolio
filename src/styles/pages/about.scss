@@ -12,7 +12,6 @@
 
 .portrait {
   max-width: 60%;
-  height: 100%;
   align-self: flex-end;
 }
 
@@ -53,6 +52,7 @@
   .portrait {
     position: absolute;
     right: 0;
+    height: 100%;
   }
 
   .parkour {
