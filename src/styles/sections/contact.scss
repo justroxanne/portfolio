@@ -1,9 +1,13 @@
 .contact {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding: clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
+
+  @supports not (height: 100svh) {
+    height: -webkit-fill-available;
+  }
 
   & div {
     display: flex;

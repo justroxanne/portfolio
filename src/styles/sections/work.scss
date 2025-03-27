@@ -1,9 +1,13 @@
 .work {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding: clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
+
+  @supports not (height: 100svh) {
+    min-height: -webkit-fill-available;
+  }
 
   .projects {
     width: 100%;
