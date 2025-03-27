@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CursorContext } from "../contexts/CursorData";
+import { CursorContext } from "../contexts/CursorContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const ColorTheme = () => {
@@ -16,11 +16,13 @@ const ColorTheme = () => {
         onMouseOver={() => {
           setCursorData({
             data: "hover",
+            text: "",
           });
         }}
         onMouseLeave={() => {
           setCursorData({
             data: "",
+            text: "",
           });
         }}
       ></li>
@@ -32,11 +34,13 @@ const ColorTheme = () => {
         onMouseOver={() => {
           setCursorData({
             data: "hover",
+            text: "",
           });
         }}
         onMouseLeave={() => {
           setCursorData({
             data: "",
+            text: "",
           });
         }}
       ></li>

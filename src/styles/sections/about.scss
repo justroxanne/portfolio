@@ -3,10 +3,10 @@
   flex-direction: column;
   gap: 2rem;
   min-height: 100vh;
+  padding: clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
 }
 
 .intro {
-  padding: 2.5rem 0.5rem 0;
   font-size: 1.2rem;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .parkour {
-  font-size: 0.8rem;
+  font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -53,10 +53,6 @@
     position: absolute;
     right: 0;
     height: 100%;
-  }
-
-  .parkour {
-    font-size: 1.2rem;
   }
 
   .parkour,

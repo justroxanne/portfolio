@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 4rem 0.5rem 0.5rem;
+  padding: clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
 
   & div {
     display: flex;
@@ -13,10 +13,12 @@
   }
 
   & h2 {
-    width: 90%;
-    align-self: flex-start;
-    font-size: 4rem;
-    padding: 2rem;
+    width: min-content;
+    font-size: clamp(4rem, 3.636rem + 1.82vw, 5rem);
+
+    @media (min-width: 768px) {
+      width: fit-content;
+    }
   }
 }
 
@@ -28,11 +30,10 @@
   display: flex;
   align-items: flex-end;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
 }
 
 .links {
-  padding-bottom: 1em;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -40,13 +41,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .contact {
-    h2 {
-      align-self: flex-start;
-      font-size: 5rem;
-    }
-  }
-
   .before {
     display: block;
     transform: scale(1, 1);
@@ -63,7 +57,6 @@
   .signature {
     align-self: flex-end;
     margin-right: 8rem;
-    font-size: 2rem;
   }
 
   .signature:hover {

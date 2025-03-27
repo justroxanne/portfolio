@@ -1,19 +1,21 @@
-#cursor {
+@use "../theme.scss" as theme;
+
+.cursor {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  #cursor {
-    @include themed {
+  .cursor {
+    @include theme.themed {
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 0;
       text-transform: uppercase;
-      color: t("background-color");
+      color: theme.t("background-color");
       position: fixed;
-      border: 1px solid t("text-color");
-      background-color: t("text-color");
+      border: 1px solid theme.t("text-color");
+      background-color: theme.t("text-color");
       width: 25px;
       height: 25px;
       border-radius: 250px;
@@ -21,18 +23,23 @@
       z-index: 50;
       top: 0;
       left: 0;
-      transition: width 0.75s ease-out, height 0.75s ease-out,
-        border-radius 0.75s ease-out, font-size 0.75s ease-out 0.15s;
+      transition:
+        width 0.75s ease-out,
+        height 0.75s ease-out,
+        border-radius 0.75s ease-out,
+        border-color 0.75s ease-out,
+        font-size 0.75s ease-out 0.15s;
       transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
 
       &:where([data-background="true"]) {
-        width: 20vw;
-        height: 15vw;
+        background-color: transparent;
+        width: 17rem;
+        height: 13rem;
         border-radius: 0;
-        border: none;
+        border: 1px solid #e8e8e8;
 
         & ~ .cursor-follower {
           display: none;
@@ -70,19 +77,18 @@
   }
 
   .cursor-follower {
-    @include themed {
+    @include theme.themed {
       z-index: 2;
       width: 10px;
       height: 10px;
       border-radius: 250px;
-      background: $mouse-color;
       transition: transform 0.5s ease-out;
       transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
       position: fixed;
       top: 0;
       left: 0;
       pointer-events: none;
-      background-color: t("text-color");
+      background-color: theme.t("text-color");
     }
   }
 }

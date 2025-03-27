@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useContext } from "react";
-import { CursorContext } from "../contexts/CursorData";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Link } from "react-scroll";
+import { useContext } from "react";
+import { CursorContext } from "../contexts/CursorContext";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import ColorTheme from "./ColorTheme";
 
@@ -60,7 +60,6 @@ const Navbar = () => {
             <motion.li variants={itemVariants}>
               <Link
                 to="hello"
-                spy={true}
                 smooth={true}
                 duration={600}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,7 +70,6 @@ const Navbar = () => {
             <motion.li variants={itemVariants}>
               <Link
                 to="work"
-                spy={true}
                 smooth={true}
                 duration={600}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -82,7 +80,6 @@ const Navbar = () => {
             <motion.li variants={itemVariants}>
               <Link
                 to="about"
-                spy={true}
                 smooth={true}
                 duration={600}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -93,7 +90,6 @@ const Navbar = () => {
             <motion.li variants={itemVariants}>
               <Link
                 to="contact"
-                spy={true}
                 smooth={true}
                 duration={600}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -116,17 +112,20 @@ const Navbar = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >
             <Link
               to="hello"
               spy={true}
+              hashSpy={true}
               smooth={true}
               duration={600}
               className="link"
@@ -138,17 +137,20 @@ const Navbar = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >
             <Link
               to="work"
               spy={true}
+              hashSpy={true}
               smooth={true}
               duration={600}
               className="link"
@@ -160,17 +162,20 @@ const Navbar = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >
             <Link
               to="about"
               spy={true}
+              hashSpy={true}
               smooth={true}
               duration={600}
               className="link"
@@ -182,17 +187,20 @@ const Navbar = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >
             <Link
               to="contact"
               spy={true}
+              hashSpy={true}
               smooth={true}
               duration={600}
               className="link"

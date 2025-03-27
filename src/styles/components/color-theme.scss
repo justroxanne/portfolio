@@ -1,3 +1,5 @@
+@use "../base/colors.scss" as colors;
+
 .colors {
   display: flex;
   gap: 1rem;
@@ -10,14 +12,14 @@
   }
 
   & .white {
-    background-color: $light-bg;
-    border-color: $light-text;
-    color: $light-text;
+    background-color: colors.$light-bg;
+    border-color: colors.$light-text;
+    color: colors.$light-text;
   }
 
   & .black {
-    background-color: $dark-bg;
-    border-color: $dark-text;
-    color: $dark-text;
+    background-color: colors.$dark-bg;
+    border-color: colors.$dark-text;
+    color: colors.$dark-text;
   }
 }

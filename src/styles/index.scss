@@ -1,13 +1,13 @@
-@import "./theme.scss";
+@use "./theme.scss";
 
-@import "./base/app.scss";
-@import "./base/colors.scss";
+@use "./base/app.scss";
+@use "./base/colors.scss";
 
-@import "./pages/about.scss";
-@import "./pages/work.scss";
-@import "./pages/contact.scss";
-@import "./pages/hello.scss";
+@use "./sections/about.scss";
+@use "./sections/work.scss";
+@use "./sections/contact.scss";
+@use "./sections/hello.scss";
 
-@import "./components/menu.scss";
-@import "./components/cursor.scss";
-@import "./components/color-theme.scss";
+@use "./components/menu.scss";
+@use "./components/cursor.scss";
+@use "./components/color-theme.scss";

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
-import { CursorContext } from "../contexts/CursorData.jsx";
+import { CursorContext } from "../../contexts/CursorContext";
 import { FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
-import portrait from "../assets/portrait-roxanne.jpeg";
-import cvfile from "../assets/RoxanneLucasCV2023.pdf";
 
 const About = () => {
   const { setCursorData } = useContext(CursorContext);
@@ -24,8 +22,19 @@ const About = () => {
           the fascinating world of coding.”
         </i>
       </motion.p>
-      <img src={portrait} className="portrait" />
+      <img src="../../portrait-roxanne.jpeg" className="portrait" />
       <div className="parkour">
+        <p>
+          • Sept 2023 to now • Frontend Developper
+          <br />
+          <a
+            onMouseOver={() => setCursorData({ data: "hover", text: "" })}
+            onMouseLeave={() => setCursorData({ data: "", text: "" })}
+            href="https://ultro.fr/"
+          >
+            <i>Ultrō</i>
+          </a>
+        </p>
         <p>
           • Feb to Aug 2023 • Web and web mobile developper
           <br />
@@ -36,20 +45,9 @@ const About = () => {
           <br />
           <i>L'antichambre tattoo studio and art gallery Anglet</i>
         </p>
-        <p>
-          • Sept 2023 to now • Frontend Developper
-          <br />
-          <a
-            onMouseOver={() => setCursorData({ data: "hover" })}
-            onMouseLeave={() => setCursorData({ data: "" })}
-            href="https://ultro.fr/"
-          >
-            <i>Ultrō</i>
-          </a>
-        </p>
       </div>
       <a
-        href={cvfile}
+        href="../../RoxanneLucasCV2023.pdf"
         target="_blank"
         className="resume-pdf"
         onMouseOver={() =>

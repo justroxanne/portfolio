@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { CursorContext } from "../contexts/CursorData.jsx";
+import { CursorContext } from "../../contexts/CursorContext";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const Contact = () => {
   const { setCursorData } = useContext(CursorContext);
 
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <motion.h2
-        initial={{ opacity: 0, y: "25vh" }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: "35vh" }}
+        whileInView={{ opacity: 1, y: "10vh" }}
         viewport={{ once: true, margin: "20%" }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
@@ -44,11 +44,13 @@ const Contact = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >
@@ -64,11 +66,13 @@ const Contact = () => {
             onMouseOver={() => {
               setCursorData({
                 data: "hover",
+                text: "",
               });
             }}
             onMouseLeave={() => {
               setCursorData({
                 data: "",
+                text: "",
               });
             }}
           >

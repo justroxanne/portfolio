@@ -1,33 +1,47 @@
-import { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-import { CursorContext } from "../contexts/CursorData";
+import { CursorContext } from "../contexts/CursorContext";
 
-const Donut = ({ position, color, floatingRange, time }) => {
+interface Props {
+  position: number[];
+  color: string;
+  floatingRange: number;
+  time: number;
+}
+
+const Donut = ({ position, color, floatingRange, time }: Props) => {
   const { setCursorData } = useContext(CursorContext);
   const [wireframe, setWireframe] = useState(false);
-  const donutRef = useRef(null);
+  const donutRef = useRef<THREE.Mesh>(null);
+  const currentPosition = new THREE.Vector3(
+    position[0],
+    position[1],
+    position[2]
+  );
 
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
 
-    donutRef.current.rotation.x += Math.random() * delta;
-    donutRef.current.rotation.y += Math.random() * delta;
+    if (donutRef.current) {
+      donutRef.current.rotation.x += Math.random() * delta;
+      donutRef.current.rotation.y += Math.random() * delta;
 
-    donutRef.current.position.y = THREE.MathUtils.lerp(
-      position[1],
-      floatingRange * Math.sin(time * t) + position[1],
-      1
-    );
+      donutRef.current.position.y = THREE.MathUtils.lerp(
+        currentPosition.y,
+        floatingRange * Math.sin(time * t) + currentPosition.y,
+        1
+      );
+    } else {
+      return;
+    }
   });
 
   return (
-    <>
+    <group>
       <mesh
-        castShadow
-        receiveShadow
         ref={donutRef}
-        position={position}
+        position={currentPosition}
         onClick={() => setWireframe(!wireframe)}
         onPointerOver={() => {
           setCursorData({
@@ -50,7 +64,7 @@ const Donut = ({ position, color, floatingRange, time }) => {
           reflectivity={1}
         />
       </mesh>
-    </>
+    </group>
   );
 };
 

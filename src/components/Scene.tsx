@@ -1,7 +1,7 @@
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import Donut from "../components/Donut";
-import Pointer from "./Pointer";
+import Donut from "./Donut";
 
 const Scene = () => {
   return (
@@ -18,7 +18,6 @@ const Scene = () => {
       <directionalLight position={[1, 2, 3]} intensity={4.5} />
       <ambientLight intensity={1.5} />
       <Physics gravity={[0, 0, 0]}>
-        <Pointer />
         <Donut
           position={[-3, -0.25, 10]}
           color={"mediumpurple"}

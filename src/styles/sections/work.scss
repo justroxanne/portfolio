@@ -1,19 +1,18 @@
 .work {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
 
   .projects {
     width: 100%;
-    height: 100vh;
-    padding: 2dvw;
+    height: 100%;
     font-size: 1.2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
   }
 
   .project-container {

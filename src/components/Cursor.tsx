@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
-import { GalleryContext } from "../contexts/WorkGallery.jsx";
-import { CursorContext } from "../contexts/CursorData.jsx";
+import { GalleryContext } from "../contexts/WorkGallery";
+import { CursorContext } from "../contexts/CursorContext";
 
-const Cursor = ({ mousePosition }) => {
+interface Props {
+  mousePosition: { x: number; y: number };
+}
+
+const Cursor = ({ mousePosition }: Props) => {
   const { currentImageSrc } = useContext(GalleryContext);
   const { cursorData } = useContext(CursorContext);
 
@@ -19,7 +23,7 @@ const Cursor = ({ mousePosition }) => {
           transform: `translate(calc(${mousePosition.x}px - 50%), calc(${mousePosition.y}px - 50%))`,
         }}
       >
-        {cursorData.text}
+        {cursorData.text && <span>{cursorData.text}</span>}
       </div>
       <div
         className="cursor-follower"

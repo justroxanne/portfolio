@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
-import { GalleryContext } from "../contexts/WorkGallery";
+import { GalleryContext } from "../../contexts/WorkGallery";
 import { FiArrowRight } from "react-icons/fi";
-import Wookie from "../assets/Wookie-clicker.png";
-import tripPlanner from "../assets/tripPlanner.png";
-import PopPursuit from "../assets/pop-pursuit.png";
 
 const Work = () => {
   const { setCurrentImageSrc } = useContext(GalleryContext);
@@ -12,26 +9,43 @@ const Work = () => {
     {
       title: "Wookie Clicker",
       description: "Personnal Project • React",
-      imageSrc: Wookie,
+      imageSrc: "/Wookie-clicker.png",
       link: "http://wookie-clicker.roxannelucas.fr",
     },
     {
-      title: "TripPlanner",
-      description: "Hackathon: 24 hours / team of 2 • React / Node.js",
-      imageSrc: tripPlanner,
-      link: "http://tripplanner-mocha.vercel.app",
+      title: "Pop Pursuit",
+      description: "Personnal Project • React",
+      imageSrc: "/pop-pursuit.png",
+      link: "https://pop-pursuit.roxannelucas.fr",
     },
     {
-      title: "Pop Pursuit",
-      description: "Personnal Project • React / Node.js / Express / MySQL",
-      imageSrc: PopPursuit,
-      link: "https://pop-pursuit.roxannelucas.fr",
+      title: "Kaya",
+      description: "Shopify theme customization for Ultrō • Liquid",
+      imageSrc: "/kaya.webp",
+      link: "https://kaya.io",
+    },
+    {
+      title: "La Rosée",
+      description: "Site maintenance for Ultrō • Hydrogen/Remix",
+      imageSrc: "/la-rosee.avif",
+      link: "https://larosee-cosmetiques.com",
+    },
+    {
+      title: "Arva",
+      description: "Store locator development • Next.js",
+      imageSrc: "/arva.webp",
+      link: "https://dealers.arva-equipment.com/fr",
+    },
+    {
+      title: "Kimberfeel",
+      description: "Shopify theme customization for Ultrō • Liquid",
+      imageSrc: "/kimberfeel.webp",
+      link: "https://kimberfeel.com",
     },
   ];
 
   return (
     <div className="work" id="work">
-      <div className="project-img"></div>
       <ul className="projects">
         {projects.map((project, index) => (
           <li key={index} className="project-detail">

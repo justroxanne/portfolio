@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@use "../theme.scss" as theme;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $main-font;
+  font-family: theme.$main-font;
 }
 
 body {
@@ -22,15 +22,10 @@ body {
   }
 }
 
-.root {
-  width: 100%;
-  height: 100%;
-}
-
 main {
-  @include themed {
-    background-color: t("background-color");
-    color: t("text-color");
+  @include theme.themed {
+    background-color: theme.t("background-color");
+    color: theme.t("text-color");
   }
 }
 
@@ -60,26 +55,21 @@ span {
 }
 
 @media screen and (min-width: 768px) {
-  .link:after {
-    content: "";
-    position: absolute;
-    transform: scaleX(0);
-    width: 100%;
-    height: 2px;
-    bottom: 1.3px;
-    left: 0;
-    background-color: currentColor;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-in;
+  .link {
+    background-image: linear-gradient(currentcolor, currentcolor);
+    background-repeat: no-repeat;
+    background-position: bottom 0 left 100%;
+    background-size: 0 2px;
+    transition: background-size 0.3s ease-out;
+
+    &:is(:hover, :focus-visible) {
+      background-size: 100% 2px;
+      background-position: bottom 0 right 100%;
+    }
   }
 
   .link.active {
-    text-decoration: underline 2px currentColor;
-  }
-
-  .link:hover:after,
-  .link:active:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    background-size: 100% 2px;
+    background-position: bottom 0 right 100%;
   }
 }
