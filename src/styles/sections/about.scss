@@ -28,7 +28,7 @@
   padding-inline: 0.5rem;
 }
 
-.resume-pdf {
+.say-hi {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -60,7 +60,7 @@
   }
 
   .parkour,
-  .resume-pdf {
+  .say-hi {
     margin-left: 3vw;
   }
 
@@ -68,7 +68,7 @@
     transition: transform 0.25s ease-in;
   }
 
-  .resume-pdf {
+  .say-hi {
     span {
       font-weight: 400;
     }

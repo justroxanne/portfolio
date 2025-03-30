@@ -19,7 +19,7 @@ const Cursor = ({ mousePosition }: Props) => {
         data-text={cursorData.data === "text"}
         data-hover={cursorData.data === "hover"}
         style={{
-          backgroundImage: `url(${currentImageSrc || null})`,
+          backgroundImage: currentImageSrc ? `url(${currentImageSrc})` : "none",
           transform: `translate(calc(${mousePosition.x}px - 50%), calc(${mousePosition.y}px - 50%))`,
         }}
       >

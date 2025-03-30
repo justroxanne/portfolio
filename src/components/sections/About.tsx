@@ -47,9 +47,9 @@ const About = () => {
         </p>
       </div>
       <a
-        href="../../RoxanneLucasCV2023.pdf"
+        href="https://www.linkedin.com/in/roxannelucas/"
         target="_blank"
-        className="resume-pdf"
+        className="say-hi"
         onMouseOver={() =>
           setCursorData({
             data: "text",
@@ -63,7 +63,7 @@ const About = () => {
           })
         }
       >
-        <span>EXPLORE MY RESUME</span>
+        <span>SAY HI ON LINKEDIN</span>
         <FiArrowRight
           style={{ height: "1.5em", width: "1.5em" }}
           className="arrow"
