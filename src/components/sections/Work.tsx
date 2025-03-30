@@ -7,10 +7,16 @@ const Work = () => {
 
   const projects = [
     {
+      title: "Les Rives d'Argentière",
+      description: "Website development from scratch • Next JS",
+      imageSrc: "/rives-argentiere.webp",
+      link: "https://lesrivesdargentiere.vercel.app",
+    },
+    {
       title: "Wookie Clicker",
       description: "Personnal Project • React",
       imageSrc: "/Wookie-clicker.png",
-      link: "http://wookie-clicker.roxannelucas.fr",
+      link: "https://wookie-clicker.roxannelucas.fr",
     },
     {
       title: "Pop Pursuit",
