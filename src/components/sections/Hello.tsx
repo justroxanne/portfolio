@@ -7,7 +7,7 @@ const Hello = () => {
       <Scene />
       <p>
         Hello! <br />
-        I'm a Web Developper <br />
+        I'm a Web Developer <br />
         and I believe that...
       </p>
       <h1>
