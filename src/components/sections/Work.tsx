@@ -14,13 +14,13 @@ const Work = () => {
     },
     {
       title: "Wookie Clicker",
-      description: "Personnal Project • React",
+      description: "Personal Project • React",
       imageSrc: "/Wookie-clicker.png",
       link: "https://wookie-clicker.roxannelucas.fr",
     },
     {
       title: "Pop Pursuit",
-      description: "Personnal Project • React",
+      description: "Personal Project • React",
       imageSrc: "/pop-pursuit.png",
       link: "https://pop-pursuit.roxannelucas.fr",
     },
